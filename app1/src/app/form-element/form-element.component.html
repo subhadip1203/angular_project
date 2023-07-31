@@ -1,0 +1,13 @@
+on keyup : <input type="text" (keyup)="onKeyUp($event)" />
+
+<br/><br/>
+
+on keyup enter : <input type="text" (keyup.enter)="onKeyUpEnter($event)" />
+
+<br/><br/>
+
+input template: <input type="text" (keyup.enter)="getUserName(username.value)" #username/>
+
+<br/><br/>
+
+2 way data binding :<input type="text" [(ngModel)] ="userName" (keyup.enter)="userNameChange()" />

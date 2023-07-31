@@ -1,0 +1,5 @@
+<p>post works!</p>
+<p> -- self property :::  {{title}} --</p>
+<p> -- parent message :::  {{msgFromParent}} --</p>
+<p> --- message form child ::: {{childMsg}} </p>
+<app-post-list [msgParent] = 'postParentMsg' (messageEvent)='receiveMessage($event)' ></app-post-list>

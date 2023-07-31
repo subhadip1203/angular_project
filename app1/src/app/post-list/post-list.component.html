@@ -1,0 +1,12 @@
+<p> -- from parent to child :::  {{msgParent}}</p>
+
+<button (click) = "sendMessageToParents()"> Click</button>
+<br/>
+
+<!-- <img src="{{imgUrl}}" alt="test image"> -->
+
+<img [src]="imgUrl" alt="test image">
+
+<p [class.red-color-text]="redColorTrue" > class binding  =>  [ class.red-color-text ] = ' redColorTrue '  </p>
+
+<p [style.color]=" !redColorTrue ? 'red' : 'black'" > class binding  =>  [ style.color ] = "redColorTrue ? 'red' : 'black'  "  </p>
