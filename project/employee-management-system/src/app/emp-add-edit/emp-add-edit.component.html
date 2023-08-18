@@ -1,15 +1,62 @@
-<div mat-dialog-title></div>
-<div mat-dialog-content>
+<div mat-dialog-title>Employee Form</div>
+<div mat-dialog-content class="content">
   <div class="row">
     <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input matInput placeholder="Placeholder" />
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" placeholder="John" />
     </mat-form-field>
     <mat-form-field appearance="outline">
-        <mat-label>Outline form field</mat-label>
-        <input matInput placeholder="Placeholder" />
-      </mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" placeholder="Doe" />
+    </mat-form-field>
   </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" placeholder="John@email.com" />
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <input matInput type="text" placeholder="USA" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <mat-radio-group aria-label="Select an option">
+      <mat-label>Gender</mat-label>
+      <mat-radio-button value="male">Male</mat-radio-button>
+      <mat-radio-button value="female">Female</mat-radio-button>
+      <mat-radio-button value="other">Other</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="row">
+    <mat-form-field appearance="outline">
+      <mat-label>Education Level</mat-label>
+      <select matNativeControl required>
+        <option value="school">School</option>
+        <option value="bachelor">Bachelor</option>
+        <option value="masters">Masters</option>
+        <option value="phd">PHD</option>
+      </select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Company</mat-label>
+      <input matInput type="text" placeholder="Google" />
+    </mat-form-field>
+  </div>
+  
 </div>
 
 <div mat-dialog-actions>
