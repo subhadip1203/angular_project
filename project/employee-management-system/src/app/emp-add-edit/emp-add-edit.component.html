@@ -1,39 +1,41 @@
 <div mat-dialog-title>Employee Form</div>
+
+<form [formGroup]="empForm" (ngSubmit)="onFromSubmit">
 <div mat-dialog-content class="content">
   <div class="row">
     <mat-form-field appearance="outline">
       <mat-label>First Name</mat-label>
-      <input matInput type="text" placeholder="John" />
+      <input matInput type="text" placeholder="John" formControllName="firstName" />
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Last Name</mat-label>
-      <input matInput type="text" placeholder="Doe" />
+      <input matInput type="text" placeholder="Doe" formControllName="lastName"/>
     </mat-form-field>
   </div>
 
   <div class="row">
     <mat-form-field appearance="outline" style="width: 100%">
       <mat-label>Email</mat-label>
-      <input matInput type="email" placeholder="John@email.com" />
+      <input matInput type="email" placeholder="John@email.com" formControllName="email"/>
     </mat-form-field>
   </div>
 
   <div class="row">
     <mat-form-field appearance="outline">
       <mat-label>Country</mat-label>
-      <input matInput type="text" placeholder="USA" />
+      <input matInput type="text" placeholder="USA" formControllName="country"/>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Date of Birth</mat-label>
-      <input matInput [matDatepicker]="picker">
+      <input matInput [matDatepicker]="picker" formControllName="dob">
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
 
   <div class="row">
-    <mat-radio-group aria-label="Select an option">
+    <mat-radio-group aria-label="Select an option" formControllName="gender">
       <mat-label>Gender</mat-label>
       <mat-radio-button value="male">Male</mat-radio-button>
       <mat-radio-button value="female">Female</mat-radio-button>
@@ -44,14 +46,14 @@
   <div class="row">
     <mat-form-field appearance="outline">
       <mat-label>Education Level</mat-label>
-      <select matNativeControl required>
+      <select matNativeControl required formControllName="education">
         <option value="school">School</option>
         <option value="bachelor">Bachelor</option>
         <option value="masters">Masters</option>
         <option value="phd">PHD</option>
       </select>
     </mat-form-field>
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" formControllName="company">
       <mat-label>Company</mat-label>
       <input matInput type="text" placeholder="Google" />
     </mat-form-field>
@@ -59,7 +61,8 @@
   
 </div>
 
-<div mat-dialog-actions>
+<div mat-dialog-actions class="form-button">
   <button mat-raised-button color="accent">Cancel</button>
-  <button mat-raised-button color="primary">Save</button>
+  <button mat-raised-button color="primary" type="submit">Save</button>
 </div>
+</form>
